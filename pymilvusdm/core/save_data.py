@@ -11,7 +11,7 @@ class SaveData:
         self.logger = logger
         self.data_dir = data_dir
         self.timestamp = timestamp
-        self.dirs = os.path.join(self.data_dir, timestamp)
+        self.dirs = os.path.join(self.data_dir)
 
     def save_hdf5_data(self, collection_name, partition_tag, vectors, ids):
         hdf5_filename = os.path.join(self.dirs, collection_name, f"{partition_tag}.h5")

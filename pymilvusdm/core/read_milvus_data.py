@@ -77,6 +77,10 @@ class ReadMilvusDB:
             total_rows += rows
             del vectors
             del ids
+
+        if total_rows == 0:
+            return None, None, 0
+
         return total_vectors, total_ids, total_rows
 
     def get_partition_data(self, milvus_meta, collection_name, partition_tag):

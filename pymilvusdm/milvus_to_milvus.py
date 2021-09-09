@@ -19,7 +19,7 @@ class MilvusToMilvus():
         pbar = tqdm(partition_tags)
         for partition_tag in pbar:
             r_vectors, r_ids, r_rows = self.milvusdb.read_milvus_file(self.milvus_meta, collection_name, partition_tag)
-            if r_rows == len(r_vectors) == len(r_ids)==0:
+            if r_rows == 0:
                 self.logger.info('The collection: {}/partition: {} has no data'.format(collection_name, partition_tag))
             elif r_rows == len(r_vectors) == len(r_ids):
                 self.milvus_insert.insert_data(r_vectors, collection_name, collection_parameter, self.mode, r_ids, partition_tag)

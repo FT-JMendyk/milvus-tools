@@ -19,7 +19,7 @@ setup(
         'h5py>=3.1.0',
         'pymysql',
         'tqdm>=4.56.0',
-        'pymilvus'
+        'pymilvus==1.1.1'
     ],
     classifiers=[
         'Programming Language :: Python :: 3.8',
